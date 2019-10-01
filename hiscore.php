@@ -18,11 +18,11 @@
 <body>
     <p class=user><strong> Username:</strong></p>
 
-    <form method="GET" action="getStats.php">
+    <form method="post" action="test.php">
         <input type=text name="player">
-        <input type=submit name=press value="OK">
-        <?php           ?>
+        <input type=submit name=press value="SEND">
     </form>
+    
 
 </body>
 
