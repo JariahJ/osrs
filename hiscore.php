@@ -24,7 +24,7 @@
     </form>
     <?php
 
-include "player.php";
+    include "player.php";
     if (isset($_POST['submit'])) {
         $player = $_POST['player'];
 
@@ -35,12 +35,12 @@ include "player.php";
             ' ',
             $result
         );
-        
+
         // commas & thin spaces fully replaced with spaces
         $statsStr = str_replace(',', ' ', $temp);
         $stats = explode(' ', $statsStr);
         $user = new player($player);
-    
+
         $user->overall = array($stats[0], $stats[1], $stats[2]);
         $user->attack = array($stats[3], $stats[4], $stats[5]);
         $user->defence = array($stats[6], $stats[7], $stats[8]);
@@ -65,9 +65,141 @@ include "player.php";
         $user->runecraft = array($stats[63], $stats[64], $stats[65]);
         $user->hunter = array($stats[66], $stats[67], $stats[68]);
         $user->construction = array($stats[69], $stats[70], $stats[71]);
-
     }
     ?>
+    <h1 style="text-align:center;"><?php echo $player . '\'s ' . 'stats' . "<br>" ?></h1>
+    <p>
+
+        <table style="width:100%">
+            <tr>
+
+                <th>Rank</th>
+                <th>Level</th>
+                <th>Experience</th>
+            </tr>
+            <tr>
+
+                <td><?php echo "Overall " .$user->overall[0] . ' ' ?></td>
+                <td><?php echo $user->overall[1] . ' ' ?></td>
+                <td><?php echo $user->overall[2] . ' ' ?></td>
+            </tr>
+            <tr>
+                <td><?php echo "Attack " .$user->attack[0] . ' ' ?></td>
+                <td><?php echo $user->attack[1] . ' ' ?></td>
+                <td><?php echo $user->attack[2] . ' ' ?></td>
+            </tr>
+            <tr>
+                <td><?php echo "Defence " .$user->defence[0] . ' ' ?></td>
+                <td><?php echo $user->defence[1] . ' ' ?></td>
+                <td><?php echo $user->defence[2] . ' ' ?></td>
+            </tr>
+            <tr>
+                <td><?php echo "Strength " .$user->strength[0] . ' ' ?></td>
+                <td><?php echo $user->strength[1] . ' ' ?></td>
+                <td><?php echo $user->strength[2] . ' ' ?></td>
+            </tr>
+            <tr>
+            <td><?php echo "Hitpoints " .$user->hitpoints[0] . ' ' ?></td>
+                <td><?php echo $user->hitpoints[1] . ' ' ?></td>
+                <td><?php echo $user->hitpoints[2] . ' ' ?></td>
+            </tr>
+            <tr>
+            <td><?php echo "Ranged " .$user->ranged[0] . ' ' ?></td>
+                <td><?php echo $user->ranged[1] . ' ' ?></td>
+                <td><?php echo $user->ranged[2] . ' ' ?></td>
+            </tr>
+            <tr>
+            <td><?php echo "Prayer " .$user->prayer[0] . ' ' ?></td>
+                <td><?php echo $user->prayer[1] . ' ' ?></td>
+                <td><?php echo $user->prayer[2] . ' ' ?></td>
+            </tr>
+            <tr>
+            <td><?php echo "Magic " .$user->magic[0] . ' ' ?></td>
+                <td><?php echo $user->magic[1] . ' ' ?></td>
+                <td><?php echo $user->magic[2] . ' ' ?></td>
+            </tr>
+            <tr>
+            <td><?php echo "Cooking " .$user->cooking[0] . ' ' ?></td>
+                <td><?php echo $user->cooking[1] . ' ' ?></td>
+                <td><?php echo $user->cooking[2] . ' ' ?></td>
+            </tr>
+            <tr>
+            <td><?php echo "Woodcutting " .$user->woodcutting[0] . ' ' ?></td>
+                <td><?php echo $user->woodcutting[1] . ' ' ?></td>
+                <td><?php echo $user->woodcutting[2] . ' ' ?></td>
+            </tr>
+            <tr>
+            <td><?php echo "Fletching " .$user->fletching[0] . ' ' ?></td>
+                <td><?php echo $user->fletching[1] . ' ' ?></td>
+                <td><?php echo $user->fletching[2] . ' ' ?></td>
+            </tr>
+            <tr>
+            <td><?php echo "Fishing " .$user->fishing[0] . ' ' ?></td>
+                <td><?php echo $user->fishing[1] . ' ' ?></td>
+                <td><?php echo $user->fishing[2] . ' ' ?></td>
+            </tr>
+            <tr>
+            <td><?php echo "Firemaking " .$user->firemaking[0] . ' ' ?></td>
+                <td><?php echo $user->firemaking[1] . ' ' ?></td>
+                <td><?php echo $user->firemaking[2] . ' ' ?></td>
+            </tr>
+            <tr>
+                <td><?php echo "Crafting " .$user->crafting[0] . ' ' ?></td>
+                <td><?php echo $user->crafting[1] . ' ' ?></td>
+                <td><?php echo $user->crafting[2] . ' ' ?></td>
+            </tr>
+            <tr>
+                <td><?php echo "Smithing " .$user->smithing[0] . ' ' ?></td>
+                <td><?php echo $user->smithing[1] . ' ' ?></td>
+                <td><?php echo $user->smithing[2] . ' ' ?></td>
+            </tr>
+            <tr>
+                <td><?php echo "Mining " .$user->mining[0] . ' ' ?></td>
+                <td><?php echo $user->mining[1] . ' ' ?></td>
+                <td><?php echo $user->mining[2] . ' ' ?></td>
+            </tr>
+            <tr>
+                <td><?php echo "Herblore " .$user->herblore[0] . ' ' ?></td>
+                <td><?php echo $user->herblore[1] . ' ' ?></td>
+                <td><?php echo $user->herblore[2] . ' ' ?></td>
+            </tr>
+            <tr>
+                <td><?php echo "Agility " .$user->agility[0] . ' ' ?></td>
+                <td><?php echo $user->agility[1] . ' ' ?></td>
+                <td><?php echo $user->agility[2] . ' ' ?></td>
+            </tr>
+            <tr>
+                <td><?php echo "Thieving " .$user->thieving[0] . ' ' ?></td>
+                <td><?php echo $user->thieving[1] . ' ' ?></td>
+                <td><?php echo $user->thieving[2] . ' ' ?></td>
+            </tr>
+            <tr>
+                <td><?php echo "Slayer " .$user->slayer[0] . ' ' ?></td>
+                <td><?php echo $user->slayer[1] . ' ' ?></td>
+                <td><?php echo $user->slayer[2] . ' ' ?></td>
+            </tr>
+            <tr>
+                <td><?php echo "Farming " .$user->farming[0] . ' ' ?></td>
+                <td><?php echo $user->farming[1] . ' ' ?></td>
+                <td><?php echo $user->farming[2] . ' ' ?></td>
+            </tr>
+            <tr>
+                <td><?php echo "Runecraft " .$user->runecraft[0] . ' ' ?></td>
+                <td><?php echo $user->runecraft[1] . ' ' ?></td>
+                <td><?php echo $user->runecraft[2] . ' ' ?></td>
+            </tr>
+            <tr>
+                <td><?php echo "Hunter " .$user->hunter[0] . ' ' ?></td>
+                <td><?php echo $user->hunter[1] . ' ' ?></td>
+                <td><?php echo $user->hunter[2] . ' ' ?></td>
+            </tr>
+            <tr>
+                <td><?php echo "Construction " .$user->construction[0] . ' ' ?></td>
+                <td><?php echo $user->construction[1] . ' ' ?></td>
+                <td><?php echo $user->construction[2] . ' ' ?></td>
+            </tr>
+        </table>
+    </p>
 
 </body>
 
